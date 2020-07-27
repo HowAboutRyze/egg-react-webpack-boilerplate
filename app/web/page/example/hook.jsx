@@ -17,7 +17,8 @@ function HookAsyncDataMode(props) {
 }
 
 HookAsyncDataMode.asyncData = async function(locals) {
-  return request.get('/example/data/api/article', locals);
+  const res = await request.get('/example/data/api/article', locals);
+  return res.data || {};
 }
 
 export default  HookAsyncDataMode;

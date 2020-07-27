@@ -7,7 +7,8 @@ import request from 'framework/request';
 import './home.css'
 class Home extends Component {
   static async asyncData(context, route) {
-    return request.get('/api/blog/list', context);
+    const res = await request.get('/api/blog/list', context);
+    return res.data || {};
   }
 
   render() {

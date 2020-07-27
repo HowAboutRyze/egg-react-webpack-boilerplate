@@ -21,7 +21,8 @@ module.exports = app => {
 
     async article(ctx) {
       const article = await ctx.service.article.getArticle(1);
-      ctx.body = { article };
+      // ctx.body = { article };
+      ctx.success({ article });
     }
   };
 };

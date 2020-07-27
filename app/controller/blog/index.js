@@ -31,6 +31,7 @@ module.exports = class IndexController extends egg.Controller {
   async detail(ctx) {
     const id = ctx.params.id;
     const article = this.service.article.getArticle(Number(id));
-    ctx.body = { article };
+    // ctx.body = { article };
+    ctx.success({ article });
   }
 };

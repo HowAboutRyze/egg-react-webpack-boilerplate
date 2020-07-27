@@ -9,7 +9,8 @@ import request from '../../../framework/request';
 class Detail extends Component {
   static async asyncData(locals, route) {
     const id = route.match.params.id;
-    return request.get(`/api/blog/${id}`, locals);
+    const res = await request.get(`/api/blog/${id}`, locals);
+    return res.data || {};
   }
 
   render() {
