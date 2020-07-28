@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-
+import cookie from '../../../lib/cookie';
 import { hot } from 'react-hot-loader/root'
 import request from 'framework/request';
 import './home.css'
@@ -9,6 +9,16 @@ class Home extends Component {
   static async asyncData(context, route) {
     const res = await request.get('/api/blog/list', context);
     return res.data || {};
+  }
+
+  async componentDidMount() {
+    // 初始化用户信息
+    await request.webGet('/api/init/userinfo');
+    // 查询 cookie 里是否获取到用户信息
+    const cookieData = cookie.get();
+    if (cookieData.USER_INFO) {
+      console.log('user info:', JSON.parse(decodeURIComponent(cookieData.USER_INFO)));
+    }
   }
 
   render() {

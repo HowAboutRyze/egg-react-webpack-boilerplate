@@ -28,5 +28,12 @@ module.exports = app => {
     layout: path.join(app.baseDir, 'app/web/view/layout.html')
   };
 
-  return exports;
+  const bizConfig = {
+    expiresTime: 7 // cookie 失效期
+  };
+
+  return {
+    ...exports,
+    ...bizConfig
+  };
 };
