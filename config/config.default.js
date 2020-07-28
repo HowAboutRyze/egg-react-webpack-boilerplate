@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const ip = require('ip');
 module.exports = app => {
   const exports = {};
 
@@ -29,7 +30,9 @@ module.exports = app => {
   };
 
   const bizConfig = {
-    expiresTime: 7 // cookie 失效期
+    expiresTime: 7, // cookie 失效期
+    serviceCacheMaxAge: 5000, // 请求缓存时间
+    serverPrifix: `${ip.address()}:8888` // 模拟请求链接前缀
   };
 
   return {

@@ -21,9 +21,17 @@ class Home extends Component {
     }
   }
 
+  getList = async () => {
+    const res = await request.webGet('/api/biz/list?page=12');
+    console.log('[get list]', res);
+  }
+
   render() {
     const { list = [] } = this.props;
     return <div className="easy-article-list">
+      <div className="some-test">
+        <button className="get-list" onClick={this.getList}>get list</button>
+      </div>
       <ul>
         {list.map(function (item) {
           return <li key={item.id} className="easy-article-item">

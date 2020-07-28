@@ -5,6 +5,7 @@ module.exports = app => {
   router.get('/api/blog/list', controller.blog.index.list);
   router.get('/api/blog/:id', controller.blog.index.detail);
   router.get('/api/init/userinfo', controller.biz.getUserInfo); // 获取用户信息，设置到 cookie里
+  router.get('/api/biz/list', controller.biz.getList); // 缓存获取数据
   router.get('/intro', controller.intro.intro.index);
   router.get('/csr', controller.blog.index.csr);
   router.get('/node', controller.blog.index.node);
