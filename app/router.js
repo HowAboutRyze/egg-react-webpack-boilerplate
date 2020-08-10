@@ -1,7 +1,7 @@
 
 module.exports = app => {
   const { router, controller } = app;
-  const { redirect } = app.middleware;
+  const { redirect, share } = app.middleware;
   router.get('/api/blog/list', controller.blog.index.list);
   router.get('/api/blog/:id', controller.blog.index.detail);
   router.get('/api/init/userinfo', controller.biz.getUserInfo); // 获取用户信息，设置到 cookie里
@@ -16,5 +16,7 @@ module.exports = app => {
   router.get('/example/data/node', redirect(), controller.example.data.nodeDataRender); // 测试重定向中间件
   router.get('/example/data/async', controller.example.data.asyncDataRender);
   router.get('/example/data/api/article', controller.example.data.article);
+  router.get('/async', share('async'), controller.blog.index.ssr);
+  router.get('/example', share('example'), controller.blog.index.ssr);
   router.get('/(.*?)', controller.blog.index.ssr);
 };

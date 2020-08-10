@@ -205,5 +205,19 @@
       "wordCount": 30
     }
   ],
-  "user": {}
+  "user": {},
+  "share": [
+    {
+      "title": "index",
+      "img": "//www.abc.com/efg.png"
+    },
+    {
+      "title": "list",
+      "img": "//www.abc.com/huj.png"
+    },
+    {
+      "title": "detail",
+      "img": "//www.abc.com/aaa.png"
+    }
+  ]
 }
