@@ -209,15 +209,15 @@
   "share": [
     {
       "title": "index",
-      "img": "//www.abc.com/efg.png"
+      "image": "//www.abc.com/efg.png"
     },
     {
       "title": "list",
-      "img": "//www.abc.com/huj.png"
+      "image": "//www.abc.com/huj.png"
     },
     {
       "title": "detail",
-      "img": "//www.abc.com/aaa.png"
+      "image": "//www.abc.com/aaa.png"
     }
   ]
 }
